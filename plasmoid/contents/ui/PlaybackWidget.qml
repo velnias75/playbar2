@@ -16,7 +16,7 @@
 *   Free Software Foundation, Inc.,
 *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-import QtQuick 2.4
+import QtQuick 2.7
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
@@ -40,16 +40,16 @@ PlaybackItem {
         id: playmodel
 
         ListElement {
-            icon: 'media-skip-backward'
+            icon: '16-16-media-skip-backward'
         }
         ListElement {
-            icon: 'media-playback-start'
+            icon: 'media-playback-playing'
         }
         ListElement {
-            icon: 'media-playback-stop'
+            icon: 'media-playback-stopped'
         }
         ListElement {
-            icon: 'media-skip-forward'
+            icon: '16-16-media-skip-forward'
         }
     }
 
@@ -88,8 +88,8 @@ PlaybackItem {
                     item.clicked.connect(mpris2.playPause)
                     item.enabled = Qt.binding(function () { return mpris2.canPlayPause })
                     item.iconSource = Qt.binding(function() {
-                        return mpris2.playing ? 'media-playback-pause'
-                                              : 'media-playback-start'
+                        return mpris2.playing ? 'media-playback-paused'
+                                              : 'media-playback-playing'
                     })
                     //NOTE: update icon playing state
                     break

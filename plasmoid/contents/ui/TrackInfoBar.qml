@@ -16,7 +16,7 @@
  *   Free Software Foundation, Inc.,
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-import QtQuick 2.6
+import QtQuick 2.7
 import QtQuick.Layouts 1.2
 
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -58,7 +58,7 @@ PlaybackItem {
                 svg: PlasmaCore.Svg {
                     imagePath: 'icons/media'
                 }
-                iconSource: mpris2.playing ? 'media-playback-pause' : 'media-playback-start'
+                iconSource: mpris2.playing ? 'media-playback-paused' : 'media-playback-playing'
                 enabled: mpris2.sourceActive
 
                 size: Math.min(buttonSize.width, buttonSize.height)
